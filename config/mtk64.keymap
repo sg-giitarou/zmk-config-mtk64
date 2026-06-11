@@ -19,6 +19,13 @@
 
 / {
     behaviors {
+// ダブルタップ用の定義：1回押し=有線無線切替(OUT_TOG) / 2回連続押し=レイヤー4トグル
+        knob_td: knob_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&out OUT_TOG>, <&tog 4>;
+        };
         // 垂直スクロール用のbehaviorの設定
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
