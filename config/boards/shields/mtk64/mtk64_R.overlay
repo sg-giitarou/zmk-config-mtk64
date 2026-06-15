@@ -29,6 +29,7 @@
 
 &trackball_listener {
     status = "okay";
+    input-processors = <&zip_temp_layer 10 5000>;
 };
 
 &xiao_serial { status = "disabled"; };
