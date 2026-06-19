@@ -84,16 +84,17 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-/* ===== POSITION RULER : index:default のキー  (※58/59 = ホイール周り) =====
+/* ===== POSITION RULER (default_layer 準拠)  ※58/59 = ホイール周り =====
     0:Esc   1:1     2:2     3:3     4:4     5:5             6:6     7:7     8:8     9:9    10:0    11:-
    12:Tab  13:Q    14:W    15:E    16:R    17:T            18:Y    19:U    20:I    21:O    22:P    23:@
    24:Ctl  25:A    26:S    27:D    28:F    29:G            30:H    31:J    32:K    33:L    34:;    35::
    36:Sft  37:Z    38:X    39:C    40:V    41:B    42:[   43:]   44:N    45:M    46:,    47:.    48:/    49:\
-   50:Alt  51:GUI          52:英数  53:Spc   54:BS   55:Ent         56:^    57:¥
-                   58:TG2  59:Ent       60:かな      61:Ent       62:Ent  63:TG2
-                                 64:G+C       65:G+V
-   66:MO1  67:MO2  68:MO3                                  69:MO1  70:MO2  71:MO3
-                              72:MO1  73:MO2  74:MO3
+   50:Alt  51:GUI          52:Spc   53:Grv   54:BS   55:Ent         56:^    57:¥
+                   58:knob 59:→fl       60:Del      61:Ent       62:Ent  63:TG3
+                                 64:BS        65:BS
+   66:MO2  67:MO3  68:MO4                                  69:MO2  70:MO3  71:MO4
+                              72:MO2  73:MO3  74:MO4
+   --- 特殊キー: 32=lt4(K) 53=lt2(Grv) 54=lt3(BS) 55=lt4(Ent) 58=knob_td 59=→floggy 60=lt4(Del) 61=lt2(Ent) 64=lt3(BS) ---
    ============================================================================= */
         default_layer {
             // [0] qwerty英字 (ベース)
@@ -111,7 +112,15 @@
             // [1] floggy英字 (ベース)
 
             bindings = <
-&trans  &kp SEMI  &kp NUHS  &kp N8  &kp COMMA  &kp LEFT_BRACE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp P  &kp K  &kp R  &kp A  &kp F  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp D  &kp T  &kp H  &kp E  &kp O  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp Y  &kp S  &kp N  &kp I  &kp U  &kp ENTER  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to_qwerty_usb  &to_qwerty_ble  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp JP_SEMI  &kp JP_LBKT  &kp JP_LPAR  &kp JP_LT  &kp JP_LBRC         &trans  &trans  &trans  &trans  &trans  &trans  
+&trans  &kp P     &kp K     &kp R   &kp A      &kp F                          &trans  &trans  &trans  &trans  &trans  &trans  
+&trans  &kp D     &kp T     &kp H   &kp E      &kp O                          &trans  &trans  &trans  &trans  &trans  &trans  
+&trans  &kp Y     &kp S     &kp N   &kp I      &kp U       &kp ENTER  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
+&trans  &trans              &trans  &trans          &trans  &trans                            &trans  &trans  
+                  &to_qwerty_usb  &to_qwerty_ble       &trans                 &trans           &trans  &trans  
+                                                       &trans                 &trans  
+        &trans  &trans  &trans                                                                 &trans  &trans  &trans  
+                                                       &trans  &trans  &trans
             >;
 
             sensor-bindings =
@@ -141,7 +150,15 @@
             // [4] カーソル (58→75へ修正)
 
             bindings = <
-&kp ESCAPE  &kp LC(LS(TAB))  &kp UP_ARROW  &kp LC(TAB)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(LS(LEFT_ARROW))  &trans  &kp LG(LS(RIGHT_ARROW))  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE  &kp LC(LS(TAB))  &kp UP_ARROW  &kp LC(TAB)  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(LS(LEFT_ARROW))  &trans  &kp LG(LS(RIGHT_ARROW))  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans         &trans  &trans         &trans  &trans
+                &trans  &trans         &trans         &trans         &trans  &trans
+                                        &trans         &trans
+        &trans  &trans  &trans                                         &trans  &trans  &trans
+                                        &trans  &trans  &trans
             >;
 
             sensor-bindings = < &scroll_left_right SCRL_LEFT SCRL_RIGHT &scroll_up_down SCRL_UP SCRL_DOWN >;
@@ -151,7 +168,15 @@
             // [5] floggy英字2
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp J  &kp M  &kp B  &trans  &kp TAB  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp V  &kp C  &kp L  &kp Z  &kp Q  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp X  &kp G  &kp W  &kp MINUS  &kt DELETE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp J  &kp M  &kp B  &trans  &kp TAB         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp V  &kp C  &kp L  &kp Z  &kp Q         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp X  &kp G  &kp W  &kp MINUS  &kt DELETE  &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans         &trans  &trans         &trans  &trans
+                &trans  &trans         &trans         &trans         &trans  &trans
+                                        &trans         &trans
+        &trans  &trans  &trans                                         &trans  &trans  &trans
+                                        &trans  &trans  &trans
             >;
 
             sensor-bindings = < &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN >;
