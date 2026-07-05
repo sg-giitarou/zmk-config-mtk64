@@ -122,12 +122,18 @@
     combos {
         compatible = "zmk,combos";
 
-       // default層/ゲーム層を Del(60)+左BS(64) 同時押しでトグル
+        // default層/ゲーム層を Del(60)+左BS(64) 同時押しでトグル
+
         combo_game {
             timeout-ms = <50>;
             key-positions = <60 64>;
             bindings = <&tog 11>;
-        
+        };
+
+        tobluetooth {
+            bindings = <&to 12>;
+            key-positions = <35 34>;
+            layers = <12>;
         };
     };
 };
@@ -153,15 +159,7 @@
             // [0] qwerty英字 (ベース)
 
             bindings = <
-&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS  
-&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T                       &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT  
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                     &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON  
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B                     &kp JP_LBKT  &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH  
-&kp LEFT_ALT  &kp LEFT_GUI      &lt 3 BACKSPACE  &lt 2 GRAVE  &lt 3 BACKSPACE  &lt 4 ENTER        &kp JP_CARET  &lt 4 JP_YEN 
-                   &knob_td  &to_floggy_wired    &lt 4 DEL    &lt 2 ENTER  &kp ENTER  &tog 3 
-                    &kp SPACE  &kp BACKSPACE 
-                     &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4 
-                      &mo 2  &mo 3  &mo 4
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT  &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 BACKSPACE  &lt 2 GRAVE  &lt 3 BACKSPACE  &lt 4 ENTER  &kp JP_CARET  &lt 4 JP_YEN  &knob_td  &to_floggy_wired  &lt 4 DEL  &lt 2 ENTER  &kp ENTER  &tog 3  &kp SPACE  &kp BACKSPACE  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4
             >;
 
             sensor-bindings =
@@ -185,15 +183,7 @@
             // [2] プロファイル/システム
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                           &trans  &trans  &trans  &trans  &trans  &trans  
-&trans  &kp MINUS  &mt NUMBER_7 KP_NUMBER_7  &mt NUMBER_8 KP_NUMBER_8  &mt NUMBER_9 KP_NUMBER_9  &kp PLUS  &trans            &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &kp F12  
-&trans  &kp SLASH  &mt NUMBER_4 KP_NUMBER_4  &mt NUMBER_5 KP_NUMBER_5  &mt NUMBER_6 KP_NUMBER_6  &kp ASTERISK                &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans
-&trans  &mt N0 KP_NUMBER_0  &mt N1 KP_NUMBER_1  &mt KP_N2 NUMBER_2  &mt KP_NUMBER_3 NUMBER_3  &kp PERIOD  &kp EQUAL          &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  
-&trans  &trans              &trans  &trans             &trans  &trans             &trans  &trans  
-                   &trans   &trans           &trans            &trans             &trans  &trans  
-                                             &trans            &trans  
-        &trans  &trans  &trans                                                    &trans  &trans  &trans 
-                                            &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &mt NUMBER_7 KP_NUMBER_7  &mt NUMBER_8 KP_NUMBER_8  &mt NUMBER_9 KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &kp F12  &trans  &kp SLASH  &mt NUMBER_4 KP_NUMBER_4  &mt NUMBER_5 KP_NUMBER_5  &mt NUMBER_6 KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &mt N0 KP_NUMBER_0  &mt N1 KP_NUMBER_1  &mt KP_N2 NUMBER_2  &mt KP_NUMBER_3 NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -266,24 +256,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
-        
+
         layer_11 {
             // [11] ゲーム (defaultコピー・あとで調整)
 
             bindings = <
-&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS
-&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T                               &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                             &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT   &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH
-&kp LEFT_ALT  &kp LEFT_GUI       &kp SPACE  &kp GRAVE       &kp BACKSPACE  &kp ENTER       &kp JP_CARET  &kp JP_YEN
-                &kp TAB  &mkp MCLK          &kp DEL          &kp ENTER          &kp ENTER  &tog 3
-                                                    &kp BACKSPACE    &kp BACKSPACE
-        &mo 2  &mo 3  &mo 4                                                                 &mo 2  &mo 3  &mo 4
-                                                    &mo 2  &mo 3  &mo 4
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT  &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &kp GRAVE  &kp BACKSPACE  &kp ENTER  &kp JP_CARET  &kp JP_YEN  &kp TAB  &mkp MCLK  &kp DEL  &kp ENTER  &kp ENTER  &tog 3  &kp BACKSPACE  &kp BACKSPACE  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4
             >;
 
-
-                 sensor-bindings =
+            sensor-bindings =
                 <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>,
                 <&scroll_up_down SCRL_UP SCRL_DOWN>;
         };
@@ -292,15 +273,7 @@
             // [12] 接続 (Bluetooth/出力切替)
 
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5      &out OUT_USB  &out OUT_BLE  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &studio_unlock
-&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans          &trans  &trans          &trans  &trans
-                &trans  &trans          &trans          &trans          &trans  &trans
-                                        &trans          &trans
-        &trans  &trans  &trans                                          &trans  &trans  &trans
-                                        &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &out OUT_USB  &out OUT_BLE  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
