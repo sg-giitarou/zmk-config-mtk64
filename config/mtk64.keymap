@@ -273,14 +273,19 @@
             bindings = <
 &kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS
 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T                               &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                             &kp H  &kp J  &lt 4 K  &kp L  &kp JP_SEMI  &kp JP_COLON
+&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                             &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT   &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH
-&kp LEFT_ALT  &kp LEFT_GUI       &kp SPACE  &lt 2 GRAVE       &lt 3 BACKSPACE  &lt 4 ENTER       &kp JP_CARET  &lt 4 JP_YEN
-                &knob_td  &to_floggy_wired          &lt 4 DEL          &lt 2 ENTER          &kp ENTER  &tog 3
-                                                    &lt 3 BACKSPACE    &kp BACKSPACE
+&kp LEFT_ALT  &kp LEFT_GUI       &kp SPACE  &kp GRAVE       &kp BACKSPACE  &kp ENTER       &kp JP_CARET  &kp JP_YEN
+                &kp TAB  &mkp MCLK          &kp DEL          &kp ENTER          &kp ENTER  &tog 3
+                                                    &kp BACKSPACE    &kp BACKSPACE
         &mo 2  &mo 3  &mo 4                                                                 &mo 2  &mo 3  &mo 4
                                                     &mo 2  &mo 3  &mo 4
             >;
+
+
+                 sensor-bindings =
+                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>,
+                <&scroll_up_down SCRL_UP SCRL_DOWN>;
         };
     };
 };
