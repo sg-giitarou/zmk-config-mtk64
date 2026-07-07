@@ -127,9 +127,16 @@
         combo_game {
             timeout-ms = <50>;
             key-positions = <60 64>;
-            bindings = <&tog 11>;
+            bindings = <&tog >;
         };
 
+        combo_conn {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            bindings = <&tog 11>;
+            layers = <0>;
+        };
+        
         tobluetooth {
             bindings = <&to 12>;
             key-positions = <35 34>;
@@ -218,10 +225,18 @@
         };
 
         layer_6 {
-            // [6] floggy記号 (空・あなたが作る)
+            // [6] ゲーム (旧layer_11から移動)
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                          &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T                               &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT
+&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                             &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT   &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH
+&kp LEFT_ALT  &kp LEFT_GUI       &kp SPACE  &kp GRAVE       &kp BACKSPACE  &kp ENTER       &kp JP_CARET  &kp JP_YEN
+                &kp TAB  &mkp MCLK          &kp DEL          &kp ENTER          &kp ENTER  &tog 3
+                                                    &kp BACKSPACE    &kp BACKSPACE
+        &mo 2  &mo 3  &mo 4                                                                 &mo 2  &mo 3  &mo 4
+                                                    &mo 2  &mo 3  &mo 4
             >;
         };
 
@@ -257,23 +272,35 @@
             >;
         };
 
-        layer_11 {
-            // [11] ゲーム (defaultコピー・あとで調整)
+    layer_11 {
+            // [11] 接続 (旧layer_12から移動)
 
             bindings = <
-&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT  &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &kp GRAVE  &kp BACKSPACE  &kp ENTER  &kp JP_CARET  &kp JP_YEN  &kp TAB  &mkp MCLK  &kp DEL  &kp ENTER  &kp ENTER  &tog 3  &kp BACKSPACE  &kp BACKSPACE  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5      &out OUT_USB  &out OUT_BLE  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &studio_unlock
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans          &trans  &trans          &trans  &trans
+                &trans  &trans          &trans          &trans          &trans  &trans
+                                        &trans          &trans
+        &trans  &trans  &trans                                          &trans  &trans  &trans
+                                        &trans  &trans  &trans
             >;
-
-            sensor-bindings =
-                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>,
-                <&scroll_up_down SCRL_UP SCRL_DOWN>;
         };
 
-        layer_12 {
-            // [12] 接続 (Bluetooth/出力切替)
+ layer_12 {
+            // [12] 予約 (空)
 
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5  &out OUT_USB  &out OUT_BLE  &trans  &trans  &bt BT_CLR  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans  &trans          &trans  &trans          &trans  &trans
+                &trans  &trans          &trans          &trans          &trans  &trans
+                                        &trans          &trans
+        &trans  &trans  &trans                                          &trans  &trans  &trans
+                                        &trans  &trans  &trans
             >;
         };
     };
