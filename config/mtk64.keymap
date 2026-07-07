@@ -127,21 +127,18 @@
         combo_game {
             timeout-ms = <50>;
             key-positions = <60 64>;
-            bindings = <&tog >;
+            bindings = <&tog 6>;
         };
 
+        // どの層でも ;(34)+:(35) 同時押し → 接続層(11)をオン/オフ
         combo_conn {
             timeout-ms = <50>;
             key-positions = <34 35>;
             bindings = <&tog 11>;
             layers = <0>;
         };
-        
-        tobluetooth {
-            bindings = <&to 12>;
-            key-positions = <35 34>;
-            layers = <12>;
-        };
+
+
     };
 };
 
