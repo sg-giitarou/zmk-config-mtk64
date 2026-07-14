@@ -135,7 +135,7 @@
         combo_conn {
             timeout-ms = <50>;
             key-positions = <34 35>;
-            bindings = <&tog 11>;
+            bindings = <&sl 11>;
             layers = <0>;
         };
     };
