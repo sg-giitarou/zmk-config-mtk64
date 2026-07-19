@@ -166,7 +166,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LEFT_ARROW RIGHT_ARROW>,
+                <&scroll_left_right SCRL_RIGHT SCRL_LEFT>,
                 <&scroll_up_down SCRL_UP SCRL_DOWN>;
         };
 
@@ -186,7 +186,7 @@
             // [2] プロファイル/システム
 
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans  &kp MINUS  &mt NUMBER_7 KP_NUMBER_7  &mt NUMBER_8 KP_NUMBER_8  &mt NUMBER_9 KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &kp F12  &trans  &kp SLASH  &mt NUMBER_4 KP_NUMBER_4  &mt NUMBER_5 KP_NUMBER_5  &mt NUMBER_6 KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &mt N0 KP_NUMBER_0  &mt N1 KP_NUMBER_1  &mt KP_N2 NUMBER_2  &mt KP_NUMBER_3 NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans  &kp MINUS  &mt NUMBER_7 KP_NUMBER_7  &mt NUMBER_8 KP_NUMBER_8  &mt NUMBER_9 KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &kp F12  &trans  &kp SLASH  &mt NUMBER_4 KP_NUMBER_4  &mt NUMBER_5 KP_NUMBER_5  &mt NUMBER_6 KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &mt NUMBER_0 KP_NUMBER_0  &mt N1 KP_NUMBER_1  &mt NUMBER_2 KP_NUMBER_2  &mt NUMBER_3 KP_NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -194,10 +194,12 @@
             // [3] テンキー/F
 
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans  &kp MINUS  &mt NUMBER_7 KP_NUMBER_7  &mt NUMBER_8 KP_NUMBER_8  &mt NUMBER_9 KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &kp F12  &trans  &kp SLASH  &mt NUMBER_4 KP_NUMBER_4  &mt NUMBER_5 KP_NUMBER_5  &mt NUMBER_6 KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &mt KP_NUMBER_0 NUMBER_0  &mt NUMBER_1 KP_NUMBER_1  &mt NUMBER_2 KP_NUMBER_2  &mt NUMBER_3 KP_NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PSCRN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans  &kp MINUS  &mt NUMBER_7 KP_NUMBER_7  &mt NUMBER_8 KP_NUMBER_8  &mt NUMBER_9 KP_NUMBER_9  &kp PLUS  &trans  &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &trans  &kp F12  &trans  &kp SLASH  &mt NUMBER_4 KP_NUMBER_4  &mt NUMBER_5 KP_NUMBER_5  &mt NUMBER_6 KP_NUMBER_6  &kp ASTERISK  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &mt NUMBER_0 KP_NUMBER_0  &mt NUMBER_1 KP_NUMBER_1  &mt NUMBER_2 KP_NUMBER_2  &mt NUMBER_3 KP_NUMBER_3  &kp PERIOD  &kp EQUAL  &mkp MB4  &mkp MB5  &mkp MB1  &mkp MB2  &mkp MB3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PSCRN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = < &inc_dec_kp TAB LS(TAB) &inc_dec_kp PG_UP PG_DN >;
+            sensor-bindings =
+                <&scroll_left_right SCRL_RIGHT SCRL_LEFT>,
+                <&scroll_up_down SCRL_UP SCRL_DOWN>;
         };
 
         layer_4 {
@@ -207,7 +209,9 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PAGE_UP  &kp UP_ARROW  &kp PAGE_DOWN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = < &scroll_left_right SCRL_LEFT SCRL_RIGHT &scroll_up_down SCRL_UP SCRL_DOWN >;
+            sensor-bindings =
+                <&scroll_left_right SCRL_RIGHT SCRL_LEFT>,
+                <&scroll_up_down SCRL_UP SCRL_DOWN>;
         };
 
         layer_5 {
