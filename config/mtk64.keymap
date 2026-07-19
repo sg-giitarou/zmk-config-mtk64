@@ -166,8 +166,8 @@
             >;
 
             sensor-bindings =
-                <&scroll_left_right SCRL_LEFT SCRL_RIGHT>,
-                <&scroll_up_down SCRL_UP SCRL_DOWN>;
+                <&scroll_up_down SCRL_UP SCRL_DOWN>,
+                <&scroll_left_right SCRL_LEFT SCRL_RIGHT>;
         };
 
         layer_1 {
