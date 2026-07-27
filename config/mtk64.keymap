@@ -115,6 +115,14 @@
 
             tap-ms = <20>;
         };
+        lt_hold: layer_tap_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 };
 
@@ -174,7 +182,7 @@
             // [1] floggy英字 (ベース)
 
             bindings = <
-&trans  &td_semi  &td_bkt  &td_par  &td_lt  &td_brc  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp P  &kp K  &kp R  &kp A  &kp F  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp D  &kp T  &kp H  &kp E  &kp O  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp Y  &kp S  &kp N  &kp I  &kp U  &kp ENTER  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &lt 5 BACKSPACE  &trans  &trans  &trans  &trans  &trans  &to_qwerty_usb  &to_qwerty_ble  &lt 4 DELETE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &td_semi  &td_bkt  &td_par  &td_lt  &td_brc  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp P  &kp K  &kp R  &kp A  &kp F  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp D  &kp T  &kp H  &kp E  &kp O  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp Y  &kp S  &kp N  &kp I  &kp U  &kp ENTER  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &lt_hold 5 BACKSPACE  &trans  &trans  &trans  &trans  &trans  &to_qwerty_usb  &to_qwerty_ble  &lt 4 DELETE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings =
