@@ -100,6 +100,13 @@
             bindings = <&kp JP_LBRC>, <&kp JP_RBRC>;
         };
 
+        td_minus: td_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp JP_MINUS>, <&kp JP_UNDER>;
+        };
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
@@ -115,6 +122,7 @@
 
             tap-ms = <20>;
         };
+
         lt_hold: layer_tap_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -226,7 +234,7 @@
             // [5] floggy英字2
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp J  &kp M  &kp B  &trans  &kp TAB  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp V  &kp C  &kp L  &kp Z  &kp Q  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp X  &kp G  &kp W  &kp MINUS  &kt DELETE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp J  &kp M  &kp B  &trans  &kp TAB  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp V  &kp C  &kp L  &kp Z  &kp Q  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp X  &kp G  &kp W  &td_MINUS  &kt DELETE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings =
