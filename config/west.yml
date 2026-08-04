@@ -17,7 +17,7 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: 83bc82dbfdcda4ef392461202534a7cc337ca055  # \(INT1)を出すため7/19のZMKに固定。解除するとINT1が効かなくなる
+      revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
