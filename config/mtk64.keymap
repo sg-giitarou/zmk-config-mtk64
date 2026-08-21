@@ -154,6 +154,11 @@
             bindings = <&sl 11>;
             layers = <0>;
         };
+
+        combo_lang1 {
+            bindings = <&kp LANG1>;
+            key-positions = <51 53>;
+        };
     };
 };
 
@@ -178,7 +183,7 @@
             // [0] qwerty英字 (ベース)
 
             bindings = <
-&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT  &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 BACKSPACE  &lt 2 GRAVE  &lt 3 BACKSPACE  &lt 4 ENTER  &kp JP_CARET  &lt 4 JP_YEN  &knob_td  &to_floggy_wired  &lt 4 DEL  &lt 2 ENTER  &kp ENTER  &tog 3  &kp SPACE  &kp BACKSPACE  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4
+&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp JP_MINUS  &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp JP_AT  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp JP_SEMI  &kp JP_COLON  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp JP_LBKT  &kp JP_RBKT  &kp N  &kp M  &kp COMMA  &kp DOT  &kp JP_SLASH  &kp JP_BSLH  &kp LEFT_ALT  &kp LEFT_GUI  &lt 3 BACKSPACE  &lt_hold 2 LANG2  &lt 3 BACKSPACE  &lt 4 ENTER  &kp JP_CARET  &lt 4 JP_YEN  &knob_td  &to_floggy_wired  &lt 4 DEL  &lt 2 ENTER  &kp ENTER  &tog 3  &kp SPACE  &kp BACKSPACE  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4  &mo 2  &mo 3  &mo 4
             >;
 
             sensor-bindings =
